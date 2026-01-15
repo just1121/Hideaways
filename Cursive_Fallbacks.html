@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursive Font Fallbacks by Platform</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Meie+Script&family=Dancing+Script&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 40px 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+        
+        .card-icon {
+            font-size: 32px;
+            margin-right: 15px;
+        }
+        
+        .card-meta h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .card-meta p {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .card-badge {
+            margin-left: auto;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-best {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .badge-good {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        
+        .badge-ok {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-varies {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+        
+        .card-body {
+            padding: 30px 25px;
+        }
+        
+        .sample-text {
+            font-size: 28px;
+            color: #05300f;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .font-name {
+            font-size: 13px;
+            color: #999;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Specific font families */
+        .meie-script { font-family: 'Meie Script', cursive; }
+        .brush-script { font-family: 'Brush Script MT', 'Brush Script Std', cursive; }
+        .snell { font-family: 'Snell Roundhand', 'Apple Chancery', cursive; }
+        .segoe-script { font-family: 'Segoe Script', 'Segoe Print', cursive; }
+        .comic-sans { font-family: 'Comic Sans MS', cursive; }
+        .dancing { font-family: 'Dancing Script', cursive; }
+        
+        .divider {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .divider span {
+            background: #f5f5f5;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .stats {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .stats h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        
+        .stat-percent {
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #92400e;
+        }
+        
+        .note strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WHAT "CURSIVE" LOOKS LIKE ON DIFFERENT DEVICES</h1>
+    <p class="subtitle">When Google Fonts is blocked, here's what users see instead</p>
+    
+    <div class="container">
+        
+        <!-- Ideal: Google Fonts -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">✨</span>
+                <div class="card-meta">
+                    <h2>Google Fonts (Ideal)</h2>
+                    <p>Gmail, Apple Mail, iPhone, Outlook.com, Yahoo</p>
+                </div>
+                <span class="card-badge badge-best">~85% of users</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text meie-script">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Meie Script (loaded from Google)</div>
+            </div>
+        </div>
+        
+        <div class="divider"><span>↓ FALLBACKS WHEN GOOGLE FONTS BLOCKED ↓</span></div>
+        
+        <!-- Mac -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🍎</span>
+                <div class="card-meta">
+                    <h2>Mac (Desktop)</h2>
+                    <p>Outlook for Mac, other apps blocking @import</p>
+                </div>
+                <span class="card-badge badge-good">Still elegant</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text brush-script">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Brush Script MT (pre-installed on Mac)</div>
+            </div>
+        </div>
+        
+        <!-- iPhone -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">📱</span>
+                <div class="card-meta">
+                    <h2>iPhone / iPad</h2>
+                    <p>If @import somehow blocked on iOS</p>
+                </div>
+                <span class="card-badge badge-good">Still elegant</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text snell">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Snell Roundhand (pre-installed on iOS)</div>
+            </div>
+        </div>
+        
+        <!-- Windows -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🪟</span>
+                <div class="card-meta">
+                    <h2>Windows (Outlook Desktop)</h2>
+                    <p>Outlook 2016, 2019, 2021, Microsoft 365</p>
+                </div>
+                <span class="card-badge badge-ok">~10-15% of users</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text segoe-script">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Segoe Script (pre-installed on Windows)</div>
+            </div>
+        </div>
+        
+        <!-- Windows Comic Sans -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🪟</span>
+                <div class="card-meta">
+                    <h2>Windows (Older systems)</h2>
+                    <p>Some older Windows versions</p>
+                </div>
+                <span class="card-badge badge-ok">Less elegant</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text comic-sans">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Comic Sans MS (the infamous one)</div>
+            </div>
+        </div>
+        
+        <!-- Android -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🤖</span>
+                <div class="card-meta">
+                    <h2>Android</h2>
+                    <p>Gmail app usually loads Google Fonts anyway</p>
+                </div>
+                <span class="card-badge badge-varies">Varies by device</span>
+            </div>
+            <div class="card-body">
+                <div class="sample-text dancing">Thank you for choosing La Lancha for your upcoming trip to Guatemala!</div>
+                <div class="font-name">Font: Dancing Script or similar (varies by manufacturer)</div>
+            </div>
+        </div>
+        
+        <!-- Stats -->
+        <div class="stats">
+            <h3>Who Sees What?</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-percent">~85%</div>
+                    <div class="stat-label">See Meie Script<br>(Google Fonts loads)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-percent">~5%</div>
+                    <div class="stat-label">See Mac/iOS fallback<br>(Still looks nice)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-percent">~10%</div>
+                    <div class="stat-label">See Windows fallback<br>(Segoe Script)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>💡 Key Insight:</strong>
+            The main "problem" group is Outlook desktop users on Windows (~10-15%). They'll see Segoe Script instead of Meie Script. It's not as elegant, but it's still readable and clearly a "script" style font. If this concerns you, Option 3 (Universal fonts with Helvetica headlines) guarantees consistency for everyone.
+        </div>
+        
+    </div>
+</body>
+</html>
