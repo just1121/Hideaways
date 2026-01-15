@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison - La Lancha Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            display: flex;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .panel {
+            flex: 1;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .panel-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .panel-header.google-fonts {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+        }
+        
+        .panel-header.fallback {
+            background: linear-gradient(135deg, #757575, #424242);
+        }
+        
+        .panel-header h2 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .panel-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+        }
+        
+        .font-list {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+        
+        .font-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #fff;
+            font-family: monospace;
+        }
+        
+        .iframe-container {
+            height: 700px;
+            overflow: auto;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .legend {
+            max-width: 1400px;
+            margin: 30px auto 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            color: #fff;
+        }
+        
+        .legend h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .legend-text strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .legend-text span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>LA LANCHA EMAIL - FONT COMPARISON</h1>
+    <p class="subtitle">See how the email renders with Google Fonts vs. fallback web-safe fonts</p>
+    
+    <div class="container">
+        <div class="panel">
+            <div class="panel-header google-fonts">
+                <h2>With Google Fonts</h2>
+                <p>What most recipients will see</p>
+                <div class="font-list">
+                    <span class="font-tag">Meie Script</span>
+                    <span class="font-tag">IBM Plex Mono</span>
+                </div>
+            </div>
+            <div class="iframe-container">
+                <iframe src="LL_Confirm_Email_Embedded.html"></iframe>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header fallback">
+                <h2>Fallback Fonts Only</h2>
+                <p>If @import is blocked</p>
+                <div class="font-list">
+                    <span class="font-tag">cursive</span>
+                    <span class="font-tag">Courier New</span>
+                </div>
+            </div>
+            <div class="iframe-container">
+                <iframe src="LL_Confirm_Email_Fallback_Test.html"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="legend">
+        <h3>Font Summary</h3>
+        <div class="legend-grid">
+            <div class="legend-item">
+                <div class="legend-text">
+                    <strong>Meie Script (Headlines)</strong>
+                    <span>Free Google Font - Falls back to system cursive</span>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-text">
+                    <strong>IBM Plex Mono (Body)</strong>
+                    <span>Free Google Font - Falls back to Courier New</span>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-text">
+                    <strong>Courier New</strong>
+                    <span>Pre-installed on all computers since the 1990s</span>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-text">
+                    <strong>System Cursive</strong>
+                    <span>Varies by OS (Brush Script, Comic Sans, etc.)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
