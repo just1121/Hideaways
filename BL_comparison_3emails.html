@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blancaneaux Lodge Email Comparison - Standard / OTA / Wholesale</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #1a1a2e;
+      color: #eaeaea;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #2d4a3e 0%, #1a3a2a 100%);
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 3px solid #6b8f71;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+    header p {
+      font-size: 14px;
+      color: #a0a0a0;
+      margin-top: 8px;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: calc(100vh - 100px);
+    }
+    .email-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #333;
+    }
+    .email-column:last-child {
+      border-right: none;
+    }
+    .column-header {
+      background: #2d4a3e;
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 2px solid #6b8f71;
+    }
+    .column-header h2 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .column-header span {
+      font-size: 11px;
+      color: #888;
+    }
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #ffffff;
+    }
+    .legend {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(45, 74, 62, 0.95);
+      padding: 15px 20px;
+      border-radius: 8px;
+      border: 1px solid #6b8f71;
+      font-size: 12px;
+      z-index: 100;
+    }
+    .legend h4 {
+      color: #6b8f71;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .legend ul {
+      list-style: none;
+    }
+    .legend li {
+      margin: 5px 0;
+      color: #ccc;
+    }
+    .legend li strong {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BLANCANEAUX LODGE — Email Template Comparison</h1>
+    <p>Standard Confirmation | OTA (Booking.com/Expedia) | Wholesale</p>
+  </header>
+  
+  <div class="container">
+    <!-- Standard Version -->
+    <div class="email-column">
+      <div class="column-header">
+        <h2>STANDARD</h2>
+        <span>BL_Confirm_0126.html</span>
+      </div>
+      <iframe src="BL_Confirm_0126.html"></iframe>
+    </div>
+    
+    <!-- OTA Version -->
+    <div class="email-column">
+      <div class="column-header">
+        <h2>OTA</h2>
+        <span>BL_OTA_0126.html</span>
+      </div>
+      <iframe src="BL_OTA_0126.html"></iframe>
+    </div>
+    
+    <!-- Wholesale Version -->
+    <div class="email-column">
+      <div class="column-header">
+        <h2>WHOLESALE</h2>
+        <span>BL_WH_0126.html</span>
+      </div>
+      <iframe src="BL_WH_0126.html"></iframe>
+    </div>
+  </div>
+  
+  <div class="legend">
+    <h4>KEY DIFFERENCES</h4>
+    <ul>
+      <li><strong>Standard:</strong> Full deposit policy (two-night), Holiday policies, Rate shown</li>
+      <li><strong>OTA:</strong> "Refer to third party" for payment/cancellation, No rate</li>
+      <li><strong>Wholesale:</strong> 2 nights deposit, simplified policy, No rate</li>
+    </ul>
+  </div>
+</body>
+</html>
